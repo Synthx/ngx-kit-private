@@ -1,0 +1,10 @@
+{
+    "extends": "../projects/kit/tsconfig.lib.json",
+    "compilerOptions": {
+        "types": ["node"],
+        "allowSyntheticDefaultImports": true
+    },
+    "exclude": ["../projects/**/*.spec.ts"],
+    "include": ["../projects/**/*"],
+    "files": ["./typings.d.ts"]
+}

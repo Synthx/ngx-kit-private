@@ -1,0 +1,18 @@
+.angular/
+.idea/
+.vscode/
+node_modules/
+dist/
+storybook-static/
+
+# not supported format
+*.iml
+*.ico
+*.svg
+
+# specific file
+.DS_Store
+.editorconfig
+.gitignore
+.prettierignore
+documentation.json

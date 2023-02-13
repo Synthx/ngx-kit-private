@@ -1,0 +1,11 @@
+<button
+    class="kt-button kt-button--shape-{{ shape }} kt-button--variant-{{ variant }}"
+    [disabled]="disabled || loading"
+    [type]="type"
+    (click)="onTap.emit($event)"
+>
+    <ng-content></ng-content>
+    <div class="kt-button-spinner" *ngIf="loading">
+        <kt-spinner size="small"></kt-spinner>
+    </div>
+</button>

@@ -1,0 +1,49 @@
+.kt-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0.5rem 2rem;
+    border: 1px solid;
+    cursor: pointer;
+    text-transform: none;
+    font-weight: 600;
+    white-space: nowrap;
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.38;
+    }
+
+    &--shape {
+        &-rounded {
+            border-radius: 0.375rem;
+        }
+
+        &-circle {
+            border-radius: 9999px;
+        }
+
+        &-none {
+            border-radius: 0;
+        }
+    }
+
+    &--variant {
+        &-primary {
+            border-color: var(--kt-color-primary);
+            background-color: var(--kt-color-primary);
+            color: var(--kt-color-primary-contrast);
+        }
+    }
+
+    &-spinner {
+        position: absolute;
+        z-index: 10;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

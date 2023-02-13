@@ -1,0 +1,35 @@
+{
+    "name": "@jetpinpin/kit",
+    "version": "23.2.3",
+    "license": "Apache-2.0",
+    "description": "Kit components library for Angular applications",
+    "keywords": [
+        "library",
+        "angular",
+        "components",
+        "design-system"
+    ],
+    "sideEffects": false,
+    "homepage": "https://github.com/Synthx/ngx-kit/tree/main/projects/kit",
+    "author": {
+        "email": "taniel.remi@gmail.com",
+        "name": "Taniel Remi"
+    },
+    "bugs": {
+        "url": "https://github.com/Synthx/ngx-kit/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Synthx/ngx-kit.git"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "peerDependencies": {
+        "@angular/common": "^15.1.0",
+        "@angular/core": "^15.1.0"
+    },
+    "dependencies": {
+        "tslib": "^2.3.0"
+    }
+}

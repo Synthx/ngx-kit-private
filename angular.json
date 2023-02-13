@@ -1,0 +1,62 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "kit": {
+            "projectType": "library",
+            "root": "projects/kit",
+            "sourceRoot": "projects/kit/src",
+            "prefix": "lib",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "style": "scss",
+                    "prefix": "kt",
+                    "standalone": true,
+                    "skipTests": true
+                }
+            },
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:ng-packagr",
+                    "options": {
+                        "project": "projects/kit/ng-package.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "tsConfig": "projects/kit/tsconfig.lib.prod.json"
+                        },
+                        "development": {
+                            "tsConfig": "projects/kit/tsconfig.lib.json"
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "storybook": {
+                    "builder": "@storybook/angular:start-storybook",
+                    "options": {
+                        "browserTarget": "kit:build",
+                        "port": 6006,
+                        "styles": ["projects/kit/src/assets/styles/index.css"]
+                    }
+                },
+                "build-storybook": {
+                    "builder": "@storybook/angular:build-storybook",
+                    "options": {
+                        "browserTarget": "kit:build",
+                        "styles": ["projects/kit/src/assets/styles/index.css"]
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-eslint/builder:lint",
+                    "options": {
+                        "lintFilePatterns": ["projects/kit/src/**/*.ts", "projects/kit/src/**/*.html"]
+                    }
+                }
+            }
+        }
+    },
+    "cli": {
+        "schematicCollections": ["@angular-eslint/schematics"]
+    }
+}
