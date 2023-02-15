@@ -1,14 +1,8 @@
-import { Component, ContentChild, forwardRef, Input, ViewChild } from '@angular/core';
-import {
-    ControlContainer,
-    ControlValueAccessor,
-    FormControl,
-    FormControlDirective,
-    NG_VALUE_ACCESSOR,
-    ReactiveFormsModule,
-} from '@angular/forms';
+import { Component, ContentChild, forwardRef, Input } from '@angular/core';
+import { ControlContainer, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { NgIf, NgTemplateOutlet } from '@angular/common';
 import { KtIconButtonComponent } from '../../action';
+import { BasicReactiveFormField } from '../../../../core/model/basic-reactive-form-field';
 
 @Component({
     standalone: true,
@@ -24,15 +18,9 @@ import { KtIconButtonComponent } from '../../action';
         },
     ],
 })
-export class KtTextFieldComponent implements ControlValueAccessor {
-    @ViewChild(FormControlDirective, { static: true })
-    formControlDirective!: FormControlDirective;
-
+export class KtTextFieldComponent extends BasicReactiveFormField {
     @ContentChild(KtIconButtonComponent)
     action?: KtIconButtonComponent;
-
-    @Input()
-    name!: string;
 
     @Input()
     type: 'text' | 'password' | 'email' | 'number' = 'text';
@@ -43,33 +31,7 @@ export class KtTextFieldComponent implements ControlValueAccessor {
     @Input()
     hint?: string;
 
-    get control(): FormControl {
-        return this.controlContainer.control?.get(this.name) as FormControl;
-    }
-
-    get isRequired(): boolean {
-        return this.control.validator?.({} as FormControl)?.['required'] === true;
-    }
-
-    get isInvalid(): boolean {
-        return this.control.touched && this.control.invalid;
-    }
-
-    get errorKey(): string | undefined {
-        return this.control.errors ? Object.keys(this.control.errors)[0] : undefined;
-    }
-
-    constructor(private controlContainer: ControlContainer) {}
-
-    writeValue(value: any): void {
-        this.formControlDirective.valueAccessor?.writeValue(value);
-    }
-
-    registerOnChange(fn: any): void {
-        this.formControlDirective.valueAccessor?.registerOnChange(fn);
-    }
-
-    registerOnTouched(fn: any): void {
-        this.formControlDirective.valueAccessor?.registerOnTouched(fn);
+    constructor(controlContainer: ControlContainer) {
+        super(controlContainer);
     }
 }

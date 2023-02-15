@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NgStyle } from '@angular/common';
 
-export const ktIcons = ['add', 'close', 'eye', 'home'] as const;
+export const ktIcons = ['add', 'chevron-down', 'close', 'eye', 'home'] as const;
 export type KtIcon = (typeof ktIcons)[number];
 
 @Component({

@@ -1,22 +1,22 @@
-<div class="kt-text-field">
-    <label class="kt-text-field-label" [for]="name">
+<div class="kt-form-field">
+    <label class="kt-form-field-label" [for]="name">
         <ng-content></ng-content>
-        <span class="kt-text-field-label-required" *ngIf="isRequired">*</span>
+        <span class="kt-form-field-label-required" *ngIf="isRequired">*</span>
     </label>
-    <div class="kt-text-field-wrapper">
+    <div class="kt-form-field-wrapper">
         <input
-            class="kt-text-field-input"
-            [class.kt-text-field-input--invalid]="isInvalid"
+            class="kt-form-field-input"
+            [class.kt-form-field-input--invalid]="isInvalid"
             [id]="name"
             [autocomplete]="autocomplete"
             [type]="type"
             [formControl]="control"
         />
-        <div class="kt-text-field-action" *ngIf="action">
+        <div class="kt-form-field-action" *ngIf="action">
             <ng-container *ngTemplateOutlet="actionTemplate"></ng-container>
         </div>
     </div>
-    <span class="kt-text-field-hint" [class.kt-text-field-hint--invalid]="isInvalid" *ngIf="hint || isInvalid">
+    <span class="kt-form-field-hint" [class.kt-form-field-hint--invalid]="isInvalid" *ngIf="hint || isInvalid">
         <ng-container *ngIf="isInvalid; else hintTemplate">
             {{ errorKey }}
         </ng-container>
