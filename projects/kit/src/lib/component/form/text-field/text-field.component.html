@@ -12,8 +12,19 @@
             [type]="type"
             [formControl]="control"
         />
+        <div class="kt-text-field-action" *ngIf="action">
+            <ng-container *ngTemplateOutlet="actionTemplate"></ng-container>
+        </div>
     </div>
     <span class="kt-text-field-hint" [class.kt-text-field-hint--invalid]="isInvalid" *ngIf="hint || isInvalid">
-        {{ hint }}
+        <ng-container *ngIf="isInvalid; else hintTemplate">
+            {{ errorKey }}
+        </ng-container>
+        <ng-template #hintTemplate>
+            {{ hint }}
+        </ng-template>
     </span>
 </div>
+<ng-template #actionTemplate>
+    <ng-content select="kt-icon-button[kt-text-field-action]"></ng-content>
+</ng-template>

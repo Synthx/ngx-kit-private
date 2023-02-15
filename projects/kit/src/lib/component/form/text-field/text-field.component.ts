@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input, ViewChild } from '@angular/core';
+import { Component, ContentChild, forwardRef, Input, ViewChild } from '@angular/core';
 import {
     ControlContainer,
     ControlValueAccessor,
@@ -7,14 +7,15 @@ import {
     NG_VALUE_ACCESSOR,
     ReactiveFormsModule,
 } from '@angular/forms';
-import { NgIf } from '@angular/common';
+import { NgIf, NgTemplateOutlet } from '@angular/common';
+import { KtIconButtonComponent } from '../../action';
 
 @Component({
     standalone: true,
     selector: 'kt-text-field',
     templateUrl: './text-field.component.html',
     styleUrls: ['./text-field.component.scss'],
-    imports: [ReactiveFormsModule, NgIf],
+    imports: [ReactiveFormsModule, NgIf, NgTemplateOutlet],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
@@ -26,6 +27,9 @@ import { NgIf } from '@angular/common';
 export class KtTextFieldComponent implements ControlValueAccessor {
     @ViewChild(FormControlDirective, { static: true })
     formControlDirective!: FormControlDirective;
+
+    @ContentChild(KtIconButtonComponent)
+    action?: KtIconButtonComponent;
 
     @Input()
     name!: string;
@@ -49,6 +53,10 @@ export class KtTextFieldComponent implements ControlValueAccessor {
 
     get isInvalid(): boolean {
         return this.control.touched && this.control.invalid;
+    }
+
+    get errorKey(): string | undefined {
+        return this.control.errors ? Object.keys(this.control.errors)[0] : undefined;
     }
 
     constructor(private controlContainer: ControlContainer) {}

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { NgStyle } from '@angular/common';
 
-export const ktIconData: string[] = ['add', 'close', 'home'];
+export const ktIconData = ['add', 'close', 'eye', 'home'] as const;
 
 @Component({
     standalone: true,
@@ -12,5 +12,5 @@ export const ktIconData: string[] = ['add', 'close', 'home'];
 })
 export class KtIconComponent {
     @Input()
-    name!: keyof typeof ktIconData;
+    name!: (typeof ktIconData)[number];
 }

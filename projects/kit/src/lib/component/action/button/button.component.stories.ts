@@ -1,5 +1,6 @@
 import { Meta, Story } from '@storybook/angular';
 import { KtButtonComponent } from './button.component';
+import { ktIconData } from '../../icon';
 
 export default {
     title: 'Components / Actions / Button',
@@ -28,12 +29,17 @@ export default {
             control: 'boolean',
             description: 'Whether the button is loading or not.',
         },
+        icon: {
+            control: 'select',
+            options: ktIconData,
+            description: 'The icon to display.',
+        },
     },
 } as Meta<KtButtonComponent>;
 
 const Template: Story<KtButtonComponent> = args => ({
     props: args,
-    template: `<kt-button [disabled]='disabled' [loading]='loading' [shape]='shape' [type]='type' [variant]='variant' (onTap)='onTap($event)'>Click me</kt-button>`,
+    template: `<kt-button [disabled]='disabled' [loading]='loading' [icon]='icon' [shape]='shape' [type]='type' [variant]='variant' (onTap)='onTap($event)'>Click me</kt-button>`,
 });
 
 export const Default = Template.bind({});
@@ -67,4 +73,10 @@ export const Loading = Template.bind({});
 Loading.args = {
     ...Default.args,
     loading: true,
+};
+
+export const Icon = Template.bind({});
+Icon.args = {
+    ...Default.args,
+    icon: 'add',
 };
