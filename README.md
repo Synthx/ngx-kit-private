@@ -1,27 +1,106 @@
-# Kit
+<p align="center">
+  <img
+    width="350"
+    src="https://github.com/Synthx/ngx-kit/blob/main/assets/logo.png?raw=true"
+    alt="Kit Design System" />
+</p>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.2.
+<p align="center">Components library for Angular 15+</p>
 
-## Development server
+<p align="center">
+  <a href="https://synthx.github.io/ngx-kit/">Showcase</a>
+</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<p align="center">
+    <img src="https://img.shields.io/npm/v/@jetpinpin/kit" alt="">
+    <img src="https://img.shields.io/github/checks-status/synthx/ngx-kit/main" alt="">
+    <img src="https://img.shields.io/github/last-commit/synthx/ngx-kit" alt="">
+    <img src="https://img.shields.io/github/license/synthx/ngx-kit" alt="">
+</p>
 
-## Code scaffolding
+## Introduction
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Kit is a complete standalone components library for Angular 15+.
 
-## Build
+### Concepts
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Kit is based on the following concepts:
 
-## Running unit tests
+-   **Components** are the building blocks of the library. They are the most basic elements of the library.
+-   **Pipes** are used to transform data. They are used to format data, to convert data, to filter data, etc.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Principles
 
-## Running end-to-end tests
+Kit was also built with the following principles in mind:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+-   🚀 **Modularity** Each component is independent and can be used on its own.
+-   🖥️ **Responsiveness** Each component is responsive and adapts to the screen size.
+-   🌐 **Internationalization** Each component is internationalized and can be used in any language.
+-   💄 **Customization** Each component is customizable and can be adapted to your needs.
 
-## Further help
+## Installation
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Before installing the library, you need to install [npm](), then you can install kit with the following command:
+
+```shell
+npm i @jetpinpin/kit
+```
+
+Kit use [Roboto]() fonts by default, and will not be installed automatically. You can install it by many ways, but the easiest way is to install it by load from a CDN :
+
+```html
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
+```
+
+You can also install it via CSS import:
+
+```css
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+```
+
+Otherwise, you can do so via npm with `typeface` package:
+
+```shell
+npm i typeface-roboto
+```
+
+then importing it in your `angular.json` file:
+
+```json
+{
+    "styles": ["node_modules/typeface-roboto/index.css"]
+}
+```
+
+### Usage
+
+After installing the library, you can use it in your Angular application by only importing the components you need, here is an example with the `KtButton`:
+
+```typescript
+// x.module.ts
+import { KtButtonComponent } from '@jetpinpin/kit';
+
+@NgModule({
+    imports: [
+        KtButtonComponent,
+    ],
+})
+```
+
+Then you can use it in your template:
+
+```html
+<kt-button>Click me</kt-button>
+```
+
+## Contributing
+
+ToDo
+
+### Development
+
+ToDo
+
+```shell
+git clone https://github.com/Synthx/ngx-kit.git
+```
