@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { KtIconComponent, ktIconData } from '../../icon';
+import { KtIcon, KtIconComponent } from '../../icon';
 
 @Component({
     standalone: true,
@@ -10,7 +10,7 @@ import { KtIconComponent, ktIconData } from '../../icon';
 })
 export class KtIconButtonComponent {
     @Input()
-    icon!: (typeof ktIconData)[number];
+    icon!: KtIcon;
 
     @Input()
     variant: 'primary' | 'ghost' = 'primary';

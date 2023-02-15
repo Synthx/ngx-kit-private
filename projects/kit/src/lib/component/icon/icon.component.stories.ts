@@ -1,5 +1,5 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
-import { KtIconComponent, ktIconData } from './icon.component';
+import { KtIconComponent, ktIcons } from './icon.component';
 import { NgForOf } from '@angular/common';
 
 export default {
@@ -13,7 +13,7 @@ export default {
 } as Meta<KtIconComponent>;
 
 const Template: Story<KtIconComponent> = () => {
-    const options = ktIconData;
+    const options = ktIcons;
 
     return {
         props: { options },

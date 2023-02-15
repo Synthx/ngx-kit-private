@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/angular';
 import { KtIconButtonComponent } from './icon-button.component';
-import { ktIconData } from '../../icon';
+import { ktIcons } from '../../icon';
 
 export default {
     title: 'Components / Actions / IconButton',
@@ -8,7 +8,7 @@ export default {
     argTypes: {
         icon: {
             control: 'select',
-            options: ktIconData,
+            options: ktIcons,
             description: 'The icon to display.',
         },
         size: {
