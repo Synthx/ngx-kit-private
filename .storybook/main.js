@@ -9,4 +9,8 @@ module.exports = {
         postcss: true,
         storyStoreV7: true,
     },
+    staticDirs: [
+        { from: '../projects/kit/src/assets', to: '/assets' },
+        { from: '../assets', to: '/public' },
+    ],
 };

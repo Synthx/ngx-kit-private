@@ -1,0 +1,6 @@
+<div class="kt-avatar kt-avatar--shape-{{ shape }}">
+    <img loading="lazy" class="kt-avatar-image" [src]="picture" [alt]="name" *ngIf="picture; else initialsTemplate" />
+    <ng-template #initialsTemplate>
+        {{ name | firstLetter }}
+    </ng-template>
+</div>

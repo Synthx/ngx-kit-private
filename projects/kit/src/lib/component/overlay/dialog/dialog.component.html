@@ -1,0 +1,12 @@
+<div class="kt-dialog">
+    <div class="kt-dialog-header">
+        <ng-content select="span[kt-dialog-title]"></ng-content>
+        <kt-icon-button icon="close" variant="ghost" (onTap)="onClose.emit()"></kt-icon-button>
+    </div>
+    <div class="kt-dialog-content">
+        <ng-content></ng-content>
+    </div>
+    <div class="kt-dialog-actions">
+        <ng-content select="kt-button[kt-dialog-actions]"></ng-content>
+    </div>
+</div>

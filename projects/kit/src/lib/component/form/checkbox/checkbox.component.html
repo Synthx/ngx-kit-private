@@ -1,0 +1,12 @@
+<div class="kt-checkbox">
+    <input
+        class="kt-checkbox-input"
+        type="checkbox"
+        [id]="id"
+        [ngModel]="checked"
+        (ngModelChange)="valueChanged($event)"
+    />
+    <label class="kt-checkbox-label" [for]="id">
+        <ng-content></ng-content>
+    </label>
+</div>

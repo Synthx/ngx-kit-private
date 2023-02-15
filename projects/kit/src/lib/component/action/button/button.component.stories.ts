@@ -17,7 +17,7 @@ export default {
         },
         variant: {
             control: 'radio',
-            options: ['primary', 'outlined', 'plain'],
+            options: ['primary', 'secondary', 'ghost'],
             description: 'The variant of the button.',
         },
         disabled: {
@@ -33,7 +33,7 @@ export default {
 
 const Template: Story<KtButtonComponent> = args => ({
     props: args,
-    template: `<kt-button [disabled]='disabled' [loading]='loading' [shape]='shape' [type]='type' [variant]='variant'>Click me</kt-button>`,
+    template: `<kt-button [disabled]='disabled' [loading]='loading' [shape]='shape' [type]='type' [variant]='variant' (onTap)='onTap($event)'>Click me</kt-button>`,
 });
 
 export const Default = Template.bind({});
@@ -43,6 +43,12 @@ export const Shape = Template.bind({});
 Shape.args = {
     ...Default.args,
     shape: 'circle',
+};
+
+export const Variant = Template.bind({});
+Variant.args = {
+    ...Default.args,
+    variant: 'secondary',
 };
 
 export const Type = Template.bind({});

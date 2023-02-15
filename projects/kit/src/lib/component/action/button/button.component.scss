@@ -1,14 +1,17 @@
 .kt-button {
     position: relative;
+    appearance: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-    padding: 0.5rem 2rem;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
     border: 1px solid;
     cursor: pointer;
     text-transform: none;
+    text-overflow: ellipsis;
     font-weight: 600;
+    font-size: 1rem;
     white-space: nowrap;
 
     &:disabled {
@@ -32,9 +35,21 @@
 
     &--variant {
         &-primary {
-            border-color: var(--kt-color-primary);
-            background-color: var(--kt-color-primary);
-            color: var(--kt-color-primary-contrast);
+            border-color: var(--kt-color-brand);
+            background-color: var(--kt-color-brand);
+            color: var(--kt-color-brand-contrast);
+        }
+
+        &-secondary {
+            border-color: var(--kt-color-brand);
+            background-color: transparent;
+            color: var(--kt-color-brand);
+        }
+
+        &-ghost {
+            border-color: transparent;
+            background-color: transparent;
+            color: var(--kt-color-brand);
         }
     }
 

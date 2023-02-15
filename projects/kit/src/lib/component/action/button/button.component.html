@@ -5,6 +5,7 @@
     (click)="onTap.emit($event)"
 >
     <ng-content></ng-content>
+    <kt-icon class="kt-button-icon" [name]="icon" *ngIf="icon"></kt-icon>
     <div class="kt-button-spinner" *ngIf="loading">
         <kt-spinner size="small"></kt-spinner>
     </div>
