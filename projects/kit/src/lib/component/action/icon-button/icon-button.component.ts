@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { KtIconComponent } from '../../icon';
+import { KtIcon, KtIconComponent } from '../../icon';
 
 @Component({
     standalone: true,
@@ -10,13 +10,16 @@ import { KtIconComponent } from '../../icon';
 })
 export class KtIconButtonComponent {
     @Input()
-    icon!: string;
+    icon!: KtIcon;
 
     @Input()
     variant: 'primary' | 'ghost' = 'primary';
 
     @Input()
     shape: 'rounded' | 'circle' | 'none' = 'rounded';
+
+    @Input()
+    size: 'small' | 'medium' | 'large' = 'medium';
 
     @Output()
     onTap = new EventEmitter<MouseEvent>();

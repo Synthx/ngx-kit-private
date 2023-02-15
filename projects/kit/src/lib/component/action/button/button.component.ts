@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { KtSpinnerComponent } from '../../indicator';
 import { NgIf } from '@angular/common';
-import { KtIconComponent } from '../../icon';
+import { KtIcon, KtIconComponent } from '../../icon';
 
 @Component({
     standalone: true,
@@ -21,7 +21,7 @@ export class KtButtonComponent {
     type: 'button' | 'submit' | 'reset' = 'button';
 
     @Input()
-    icon?: string;
+    icon?: KtIcon;
 
     @Input()
     disabled: boolean = false;
