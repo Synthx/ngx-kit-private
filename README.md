@@ -1,6 +1,6 @@
 <p align="center">
   <img
-    width="350"
+    width="400"
     src="https://github.com/Synthx/ngx-kit/blob/main/assets/logo.png?raw=true"
     alt="Kit Design System" />
 </p>
@@ -8,7 +8,7 @@
 <p align="center">Components library for Angular 15+</p>
 
 <p align="center">
-  <a href="https://synthx.github.io/ngx-kit/">Showcase</a>
+  <a target='_blank' href="https://synthx.github.io/ngx-kit/">Showcase</a>
 </p>
 
 <p align="center">
@@ -40,13 +40,13 @@ Kit was also built with the following principles in mind:
 
 ## Installation
 
-Before installing the library, you need to install [npm](), then you can install kit with the following command:
+Before installing the library, you need to install [npm](https://www.npmjs.com/), then you can install kit with the following command:
 
 ```shell
 npm i @jetpinpin/kit
 ```
 
-Kit use [Roboto]() fonts by default, and will not be installed automatically. You can install it by many ways, but the easiest way is to install it by load from a CDN :
+Kit use [Roboto](https://fonts.google.com/specimen/Roboto) fonts by default, and will not be installed automatically. You can install it by many ways, but the easiest way is to install it by load from a CDN :
 
 ```html
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
@@ -87,7 +87,7 @@ import { KtButtonComponent } from '@jetpinpin/kit';
 })
 ```
 
-Then you can use it in your template:
+Then in your template:
 
 ```html
 <kt-button>Click me</kt-button>
@@ -100,7 +100,3 @@ ToDo
 ### Development
 
 ToDo
-
-```shell
-git clone https://github.com/Synthx/ngx-kit.git
-```
