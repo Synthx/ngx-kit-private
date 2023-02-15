@@ -1,0 +1,19 @@
+<div class="kt-text-field">
+    <label class="kt-text-field-label" [for]="name">
+        <ng-content></ng-content>
+        <span class="kt-text-field-label-required" *ngIf="isRequired">*</span>
+    </label>
+    <div class="kt-text-field-wrapper">
+        <input
+            class="kt-text-field-input"
+            [class.kt-text-field-input--invalid]="isInvalid"
+            [id]="name"
+            [autocomplete]="autocomplete"
+            [type]="type"
+            [formControl]="control"
+        />
+    </div>
+    <span class="kt-text-field-hint" [class.kt-text-field-hint--invalid]="isInvalid" *ngIf="hint || isInvalid">
+        {{ hint }}
+    </span>
+</div>

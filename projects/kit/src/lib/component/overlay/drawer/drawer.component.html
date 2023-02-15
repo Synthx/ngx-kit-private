@@ -1,0 +1,12 @@
+<div class="kt-drawer">
+    <div class="kt-drawer-header">
+        <ng-content select="span[kt-drawer-title]"></ng-content>
+        <kt-icon-button icon="close" variant="ghost" (onTap)="onClose.emit()"></kt-icon-button>
+    </div>
+    <div class="kt-drawer-content">
+        <ng-content></ng-content>
+    </div>
+    <div class="kt-drawer-actions">
+        <ng-content select="kt-button[kt-drawer-actions]"></ng-content>
+    </div>
+</div>

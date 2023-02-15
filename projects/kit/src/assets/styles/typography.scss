@@ -1,0 +1,30 @@
+$kt-typo-title_size: 1.625rem;
+$kt-typo-title_weight: 700;
+$kt-typo-title_line-height: 2rem;
+
+$kt-typo-body_size: 1rem;
+$kt-typo-body_weight: 400;
+$kt-typo-body_line-height: 1.375rem;
+
+$kt-typo-caption_size: 0.75rem;
+$kt-typo-caption_weight: 400;
+$kt-typo-caption_line-height: 1rem;
+
+* {
+    font-family: Roboto, system-ui, -apple-system, sans-serif;
+    font-size: $kt-typo-body_size;
+    font-weight: $kt-typo-body_weight;
+    line-height: $kt-typo-body_line-height;
+}
+
+.kt-typo-title {
+    font-size: $kt-typo-title_size;
+    font-weight: $kt-typo-title_weight;
+    line-height: $kt-typo-title_line-height;
+}
+
+.kt-typo-caption {
+    font-size: $kt-typo-caption_size;
+    font-weight: $kt-typo-caption_weight;
+    line-height: $kt-typo-caption_line-height;
+}

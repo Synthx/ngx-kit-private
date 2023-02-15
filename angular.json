@@ -37,14 +37,14 @@
                     "options": {
                         "browserTarget": "kit:build",
                         "port": 6006,
-                        "styles": ["projects/kit/src/assets/styles/index.css"]
+                        "styles": ["projects/kit/src/assets/styles/index.scss"]
                     }
                 },
                 "build-storybook": {
                     "builder": "@storybook/angular:build-storybook",
                     "options": {
                         "browserTarget": "kit:build",
-                        "styles": ["projects/kit/src/assets/styles/index.css"]
+                        "styles": ["projects/kit/src/assets/styles/index.scss"]
                     }
                 },
                 "lint": {
