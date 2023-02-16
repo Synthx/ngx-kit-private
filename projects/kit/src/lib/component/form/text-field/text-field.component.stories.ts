@@ -3,6 +3,7 @@ import { KtTextFieldComponent } from './text-field.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
 import { KtIconButtonComponent } from '../../action';
+import { KT_FORM_CONFIG_TOKEN_PROVIDER } from '../../../../core/storybook/providers';
 
 const name: string = 'field';
 
@@ -12,6 +13,7 @@ export default {
     decorators: [
         moduleMetadata({
             imports: [ReactiveFormsModule, JsonPipe, KtIconButtonComponent],
+            providers: [KT_FORM_CONFIG_TOKEN_PROVIDER],
         }),
     ],
     argTypes: {
@@ -91,7 +93,7 @@ const ActionTemplate: Story<KtTextFieldComponent> = args => {
             <form style='width: 360px' [formGroup]='formGroup'>
                 <kt-text-field [autocomplete]='autocomplete' [hint]='hint' [name]='name' [type]='type'>
                     Field
-                    <kt-icon-button kt-text-field-action icon='eye' size='small' shape='circle' variant='ghost'></kt-icon-button>
+                    <kt-icon-button kt-form-field-action icon='eye' size='small' shape='circle' variant='ghost'></kt-icon-button>
                 </kt-text-field>
                 <pre style='background: #191919; color: #ffffff; padding: 12px; border-radius: 8px; font-size: 14px; white-space: nowrap'>
                     {{ formGroup.get(name).value | json }}
