@@ -16,9 +16,13 @@
             <ng-container *ngTemplateOutlet="actionTemplate"></ng-container>
         </div>
     </div>
-    <span class="kt-form-field-hint" [class.kt-form-field-hint--invalid]="isInvalid" *ngIf="hint || isInvalid">
+    <span
+        class="kt-form-field-hint"
+        [class.kt-form-field-hint--invalid]="isInvalid"
+        *ngIf="hint || (isInvalid && error)"
+    >
         <ng-container *ngIf="isInvalid; else hintTemplate">
-            {{ errorKey }}
+            {{ error }}
         </ng-container>
         <ng-template #hintTemplate>
             {{ hint }}
@@ -26,5 +30,5 @@
     </span>
 </div>
 <ng-template #actionTemplate>
-    <ng-content select="kt-icon-button[kt-text-field-action]"></ng-content>
+    <ng-content select="kt-icon-button[kt-form-field-action]"></ng-content>
 </ng-template>

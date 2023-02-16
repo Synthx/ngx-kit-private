@@ -2,6 +2,7 @@ import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { JsonPipe } from '@angular/common';
 import { KtSelectComponent } from './select.component';
+import { KT_FORM_CONFIG_TOKEN_PROVIDER } from '../../../../core/storybook/providers';
 
 const name: string = 'field';
 
@@ -11,6 +12,7 @@ export default {
     decorators: [
         moduleMetadata({
             imports: [ReactiveFormsModule, JsonPipe],
+            providers: [KT_FORM_CONFIG_TOKEN_PROVIDER],
         }),
     ],
     argTypes: {

@@ -6,7 +6,7 @@
     <div class="kt-form-field-wrapper">
         <select
             class="kt-form-field-select"
-            [class.kt-text-field-select--invalid]="isInvalid"
+            [class.kt-form-field-select--invalid]="isInvalid"
             [id]="name"
             [formControl]="control"
         >
@@ -15,7 +15,7 @@
     </div>
     <span class="kt-form-field-hint" [class.kt-form-field-hint--invalid]="isInvalid" *ngIf="hint || isInvalid">
         <ng-container *ngIf="isInvalid; else hintTemplate">
-            {{ errorKey }}
+            {{ error }}
         </ng-container>
         <ng-template #hintTemplate>
             {{ hint }}

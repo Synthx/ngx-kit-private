@@ -1,5 +1,6 @@
 import { ControlContainer, ControlValueAccessor, FormControl, FormControlDirective } from '@angular/forms';
 import { Input, ViewChild } from '@angular/core';
+import { KtFormConfig } from '../token/form-config-token';
 
 export abstract class BasicReactiveFormField implements ControlValueAccessor {
     @ViewChild(FormControlDirective, { static: true })
@@ -20,11 +21,20 @@ export abstract class BasicReactiveFormField implements ControlValueAccessor {
         return this.control.touched && this.control.invalid;
     }
 
-    protected get errorKey(): string | undefined {
-        return this.control.errors ? Object.keys(this.control.errors)[0] : undefined;
+    protected get error(): string | undefined {
+        if (this.control.errors) {
+            const key = Object.keys(this.control.errors)[0];
+            if (this.config && this.config[key]) {
+                return this.config[key];
+            }
+
+            return key;
+        }
+
+        return undefined;
     }
 
-    protected constructor(protected controlContainer: ControlContainer) {}
+    protected constructor(protected controlContainer: ControlContainer, protected config?: KtFormConfig) {}
 
     writeValue(value: any): void {
         this.formControlDirective.valueAccessor?.writeValue(value);

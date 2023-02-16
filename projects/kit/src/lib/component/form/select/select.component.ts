@@ -1,7 +1,8 @@
-import { Component, forwardRef, Input } from '@angular/core';
+import { Component, forwardRef, Inject, Input, Optional } from '@angular/core';
 import { BasicReactiveFormField } from '../../../../core/model/basic-reactive-form-field';
 import { ControlContainer, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
+import { KT_FORM_CONFIG_TOKEN, KtFormConfig } from '../../../../core/token/form-config-token';
 
 @Component({
     standalone: true,
@@ -21,7 +22,7 @@ export class KtSelectComponent extends BasicReactiveFormField {
     @Input()
     hint?: string;
 
-    constructor(controlContainer: ControlContainer) {
-        super(controlContainer);
+    constructor(controlContainer: ControlContainer, @Optional() @Inject(KT_FORM_CONFIG_TOKEN) config?: KtFormConfig) {
+        super(controlContainer, config);
     }
 }
