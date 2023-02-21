@@ -10,8 +10,8 @@
             "prefix": "lib",
             "schematics": {
                 "@schematics/angular:component": {
-                    "style": "scss",
                     "prefix": "kt",
+                    "style": "none",
                     "standalone": true,
                     "skipTests": true
                 }
@@ -37,14 +37,14 @@
                     "options": {
                         "browserTarget": "kit:build",
                         "port": 6006,
-                        "styles": ["projects/kit/src/assets/styles/index.scss"]
+                        "styles": ["projects/kit/styles/index.scss"]
                     }
                 },
                 "build-storybook": {
                     "builder": "@storybook/angular:build-storybook",
                     "options": {
                         "browserTarget": "kit:build",
-                        "styles": ["projects/kit/src/assets/styles/index.scss"]
+                        "styles": ["projects/kit/assets/styles.css"]
                     }
                 },
                 "lint": {

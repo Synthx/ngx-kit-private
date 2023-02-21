@@ -1,6 +1,6 @@
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { KtToastComponent } from './toast.component';
-import { KtIconComponent } from '../../icon';
+import { KtIconComponent } from '../../icon/icon.component';
 
 export default {
     title: 'Components / Overlays / Toast',

@@ -1,6 +1,6 @@
 {
     "name": "@jetpinpin/kit",
-    "version": "23.2.3",
+    "version": "0.0.1",
     "license": "Apache-2.0",
     "description": "Kit components library for Angular applications",
     "keywords": [

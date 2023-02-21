@@ -1,14 +1,13 @@
 import { Component, forwardRef, Inject, Input, Optional } from '@angular/core';
-import { BasicReactiveFormField } from '../../../../core/model/basic-reactive-form-field';
-import { ControlContainer, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { BasicReactiveFormFieldComponent } from '../../../../core/model/basic-reactive-form-field.component';
+import { ControlContainer, ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { NgIf } from '@angular/common';
-import { KT_FORM_CONFIG_TOKEN, KtFormConfig } from '../../../../core/token/form-config-token';
+import { KT_FORM_CONFIG_TOKEN, KtFormConfig } from '../../../../core/token';
 
 @Component({
     standalone: true,
     selector: 'kt-select',
     templateUrl: './select.component.html',
-    styleUrls: ['./select.component.scss'],
     imports: [ReactiveFormsModule, NgIf],
     providers: [
         {
@@ -18,11 +17,14 @@ import { KT_FORM_CONFIG_TOKEN, KtFormConfig } from '../../../../core/token/form-
         },
     ],
 })
-export class KtSelectComponent extends BasicReactiveFormField {
+export class KtSelectComponent extends BasicReactiveFormFieldComponent implements ControlValueAccessor {
     @Input()
     hint?: string;
 
-    constructor(controlContainer: ControlContainer, @Optional() @Inject(KT_FORM_CONFIG_TOKEN) config?: KtFormConfig) {
-        super(controlContainer, config);
+    constructor(
+        protected override controlContainer: ControlContainer,
+        @Optional() @Inject(KT_FORM_CONFIG_TOKEN) protected override config?: KtFormConfig,
+    ) {
+        super();
     }
 }

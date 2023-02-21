@@ -3,8 +3,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 2.5rem;
-    width: 2.5rem;
     background: var(--kt-color-card);
     color: var(--kt-color-brand-contrast);
 
@@ -19,6 +17,18 @@
 
         &-none {
             border-radius: 0;
+        }
+    }
+
+    &--size {
+        &-small {
+            height: 2rem;
+            width: 2rem;
+        }
+
+        &-medium {
+            height: 2.5rem;
+            width: 2.5rem;
         }
     }
 

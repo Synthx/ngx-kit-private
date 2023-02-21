@@ -1,13 +1,11 @@
-import { Component, EventEmitter, Output, ViewEncapsulation } from '@angular/core';
-import { KtIconComponent } from '../../icon';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { KtIconComponent } from '../../icon/icon.component';
 import { KtIconButtonComponent } from '../../action';
 
 @Component({
     standalone: true,
     selector: 'kt-dialog',
     templateUrl: './dialog.component.html',
-    styleUrls: ['./dialog.component.scss'],
-    encapsulation: ViewEncapsulation.None,
     imports: [KtIconComponent, KtIconButtonComponent],
 })
 export class KtDialogComponent {

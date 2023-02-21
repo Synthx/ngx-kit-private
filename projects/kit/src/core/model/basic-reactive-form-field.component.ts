@@ -1,13 +1,19 @@
 import { ControlContainer, ControlValueAccessor, FormControl, FormControlDirective } from '@angular/forms';
-import { Input, ViewChild } from '@angular/core';
-import { KtFormConfig } from '../token/form-config-token';
+import { Component, Input, ViewChild } from '@angular/core';
+import { KtFormConfig } from '../token';
 
-export abstract class BasicReactiveFormField implements ControlValueAccessor {
+@Component({
+    template: '',
+})
+export abstract class BasicReactiveFormFieldComponent implements ControlValueAccessor {
     @ViewChild(FormControlDirective, { static: true })
     protected formControlDirective!: FormControlDirective;
 
     @Input()
     name!: string;
+
+    protected abstract controlContainer: ControlContainer;
+    protected abstract config?: KtFormConfig;
 
     protected get control(): FormControl {
         return this.controlContainer.control?.get(this.name) as FormControl;
@@ -33,8 +39,6 @@ export abstract class BasicReactiveFormField implements ControlValueAccessor {
 
         return undefined;
     }
-
-    protected constructor(protected controlContainer: ControlContainer, protected config?: KtFormConfig) {}
 
     writeValue(value: any): void {
         this.formControlDirective.valueAccessor?.writeValue(value);

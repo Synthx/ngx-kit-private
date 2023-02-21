@@ -1,11 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { KtIcon, KtIconComponent } from '../../icon';
+import { KtIcon, KtIconComponent } from '../../icon/icon.component';
 
 @Component({
     standalone: true,
     selector: 'kt-icon-button',
     templateUrl: './icon-button.component.html',
-    styleUrls: ['./icon-button.component.scss'],
     imports: [KtIconComponent],
 })
 export class KtIconButtonComponent {

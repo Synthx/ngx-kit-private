@@ -6,7 +6,6 @@ import { NgIf } from '@angular/common';
     standalone: true,
     selector: 'kt-avatar',
     templateUrl: './avatar.component.html',
-    styleUrls: ['./avatar.component.scss'],
     imports: [FirstLetterPipe, NgIf],
 })
 export class KtAvatarComponent {
@@ -18,6 +17,9 @@ export class KtAvatarComponent {
 
     @Input()
     shape: 'rounded' | 'circle' | 'none' = 'rounded';
+
+    @Input()
+    size: 'small' | 'medium' = 'medium';
 
     @Input()
     fallback: 'initials' | 'image' = 'initials';
