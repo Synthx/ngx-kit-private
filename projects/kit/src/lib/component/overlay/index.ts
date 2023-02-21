@@ -1,3 +1,3 @@
-export * from './dialog';
-export * from './drawer';
-export * from './toast';
+export * from './dialog/dialog.component';
+export * from './drawer/drawer.component';
+export * from './toast/toast.component';

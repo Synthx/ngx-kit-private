@@ -4,9 +4,10 @@
     "private": true,
     "scripts": {
         "ng": "ng",
-        "build": "ng build kit --configuration development",
-        "build:prod": "ng build kit",
-        "build:storybook": "ng run kit:build-storybook",
+        "build": "npm run build:styles && ng build kit --configuration development",
+        "build:styles": "sass --style=compressed projects/kit/styles/index.scss projects/kit/assets/styles.css",
+        "build:prod": "npm run build:styles && ng build kit",
+        "build:storybook": "npm run build:styles && ng run kit:build-storybook",
         "publish": "npm run build:prod && cd dist/kit && npm publish",
         "start": "ng run kit:storybook",
         "format": "npx prettier --write .",

@@ -19,6 +19,23 @@
     &-wrapper {
         position: relative;
         display: flex;
+
+        &-select {
+            &::before {
+                content: '';
+                position: absolute;
+                z-index: 10;
+                right: 0.5rem;
+                top: 0;
+                bottom: 0;
+                margin: auto 0;
+                mask: url('/projects/kit/assets/icons/chevron-down.svg');
+                background-color: var(--kt-color-text);
+                height: 1.5rem;
+                width: 1.5rem;
+                pointer-events: none;
+            }
+        }
     }
 
     &-input {

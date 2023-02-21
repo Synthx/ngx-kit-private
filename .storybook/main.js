@@ -10,7 +10,7 @@ module.exports = {
         storyStoreV7: true,
     },
     staticDirs: [
-        { from: '../projects/kit/src/assets', to: '/assets' },
+        { from: '../projects/kit/assets', to: '/assets' },
         { from: '../assets', to: '/public' },
     ],
 };

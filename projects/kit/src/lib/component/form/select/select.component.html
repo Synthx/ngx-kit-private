@@ -3,10 +3,10 @@
         <ng-content></ng-content>
         <span class="kt-form-field-label-required" *ngIf="isRequired">*</span>
     </label>
-    <div class="kt-form-field-wrapper">
+    <div class="kt-form-field-wrapper kt-form-field-wrapper-select">
         <select
-            class="kt-form-field-select"
-            [class.kt-form-field-select--invalid]="isInvalid"
+            class="kt-form-field-input"
+            [class.kt-form-field-input--invalid]="isInvalid"
             [id]="name"
             [formControl]="control"
         >

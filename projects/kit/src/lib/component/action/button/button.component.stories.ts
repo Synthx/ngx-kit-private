@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/angular';
 import { KtButtonComponent } from './button.component';
-import { ktIcons } from '../../icon';
+import { ktIcons } from '../../icon/icon.component';
 
 export default {
     title: 'Components / Actions / Button',

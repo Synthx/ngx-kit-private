@@ -1,13 +1,13 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { KtSpinnerComponent } from '../../indicator';
 import { NgIf } from '@angular/common';
-import { KtIcon, KtIconComponent } from '../../icon';
+import { KtIcon, KtIconComponent } from '../../icon/icon.component';
+import { Nullable } from '../../../../core/model/nullable';
 
 @Component({
     standalone: true,
     selector: 'kt-button',
     templateUrl: './button.component.html',
-    styleUrls: ['./button.component.scss'],
     imports: [NgIf, KtSpinnerComponent, KtIconComponent],
 })
 export class KtButtonComponent {
@@ -24,10 +24,10 @@ export class KtButtonComponent {
     icon?: KtIcon;
 
     @Input()
-    disabled: boolean = false;
+    disabled: Nullable<boolean> = false;
 
     @Input()
-    loading: boolean = false;
+    loading: Nullable<boolean> = false;
 
     @Output()
     onTap = new EventEmitter<MouseEvent>();

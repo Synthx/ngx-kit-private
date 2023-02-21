@@ -5,7 +5,6 @@ import { ControlValueAccessor, FormsModule, NG_VALUE_ACCESSOR } from '@angular/f
     standalone: true,
     selector: 'kt-checkbox',
     templateUrl: './checkbox.component.html',
-    styleUrls: ['./checkbox.component.scss'],
     imports: [FormsModule],
     providers: [
         {

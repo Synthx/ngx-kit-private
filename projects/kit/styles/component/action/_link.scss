@@ -1,11 +1,19 @@
-.kt-icon-button {
+.kt-link {
     position: relative;
     appearance: none;
     display: flex;
     align-items: center;
     justify-content: center;
+    gap: 0.5rem;
+    padding: 0.875rem 1.5rem;
     border: 1px solid;
     cursor: pointer;
+    text-decoration: none;
+    text-transform: none;
+    text-overflow: ellipsis;
+    font-weight: 600;
+    font-size: 1rem;
+    white-space: nowrap;
 
     &--shape {
         &-rounded {
@@ -18,20 +26,6 @@
 
         &-none {
             border-radius: 0;
-        }
-    }
-
-    &--size {
-        &-small {
-            padding: 0.5rem;
-        }
-
-        &-medium {
-            padding: 0.75rem;
-        }
-
-        &-large {
-            padding: 1rem;
         }
     }
 
@@ -52,6 +46,13 @@
             border-color: transparent;
             background-color: transparent;
             color: var(--kt-color-brand);
+        }
+
+        &-none {
+            border-color: transparent;
+            background-color: transparent;
+            color: var(--kt-color-brand);
+            padding: 0;
         }
     }
 }

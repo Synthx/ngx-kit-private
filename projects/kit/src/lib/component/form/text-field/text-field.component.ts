@@ -1,15 +1,14 @@
 import { Component, ContentChild, forwardRef, Inject, Input, Optional } from '@angular/core';
-import { ControlContainer, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
+import { ControlContainer, ControlValueAccessor, NG_VALUE_ACCESSOR, ReactiveFormsModule } from '@angular/forms';
 import { NgIf, NgTemplateOutlet } from '@angular/common';
 import { KtIconButtonComponent } from '../../action';
-import { BasicReactiveFormField } from '../../../../core/model/basic-reactive-form-field';
-import { KT_FORM_CONFIG_TOKEN, KtFormConfig } from '../../../../core/token/form-config-token';
+import { BasicReactiveFormFieldComponent } from '../../../../core/model/basic-reactive-form-field.component';
+import { KT_FORM_CONFIG_TOKEN, KtFormConfig } from '../../../../core/token';
 
 @Component({
     standalone: true,
     selector: 'kt-text-field',
     templateUrl: './text-field.component.html',
-    styleUrls: ['./text-field.component.scss'],
     imports: [ReactiveFormsModule, NgIf, NgTemplateOutlet],
     providers: [
         {
@@ -19,7 +18,7 @@ import { KT_FORM_CONFIG_TOKEN, KtFormConfig } from '../../../../core/token/form-
         },
     ],
 })
-export class KtTextFieldComponent extends BasicReactiveFormField {
+export class KtTextFieldComponent extends BasicReactiveFormFieldComponent implements ControlValueAccessor {
     @ContentChild(KtIconButtonComponent)
     action?: KtIconButtonComponent;
 
@@ -32,7 +31,10 @@ export class KtTextFieldComponent extends BasicReactiveFormField {
     @Input()
     hint?: string;
 
-    constructor(controlContainer: ControlContainer, @Optional() @Inject(KT_FORM_CONFIG_TOKEN) config?: KtFormConfig) {
-        super(controlContainer, config);
+    constructor(
+        protected override controlContainer: ControlContainer,
+        @Optional() @Inject(KT_FORM_CONFIG_TOKEN) protected override config?: KtFormConfig,
+    ) {
+        super();
     }
 }

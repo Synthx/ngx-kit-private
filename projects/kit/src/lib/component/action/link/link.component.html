@@ -1,0 +1,18 @@
+<a
+    class="kt-link kt-link--shape-{{ shape }} kt-link--variant-{{ variant }}"
+    [routerLink]="href"
+    *ngIf="type === 'internal'; else externalTemplate"
+>
+    <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+</a>
+
+<ng-template #externalTemplate>
+    <a target="_blank" class="kt-link kt-link--shape-{{ shape }} kt-link--variant-{{ variant }}" [href]="href">
+        <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+        <kt-icon name="external-link"></kt-icon>
+    </a>
+</ng-template>
+
+<ng-template #contentTemplate>
+    <ng-content></ng-content>
+</ng-template>
